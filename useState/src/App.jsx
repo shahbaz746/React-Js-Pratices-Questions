@@ -8,13 +8,19 @@ function App() {
   // const [sh, setSh] = useState("Hello Shahbaz");
   // const [isVisible, setIsVisible] = useState(false);
   const [isColur, setIsColur] = useState(false);
-
+  // const [name, setname] = useState("shahbaz")
+const [foam, setFoam] = useState({email : "",phone: ""})
   // const handleToggle = () => {
   //   setIsVisible((prev) => !prev);
   // };
   const handleToggle = () => {
     setIsColur((prev) => !prev);
   };
+
+  const handelChange = (e)=>{
+    // setname(e.target.value)
+    setFoam({...foam,[e.target.name]:e.target.value})
+  }
 
   return (
     <>
@@ -31,9 +37,11 @@ function App() {
 
       {/* </div> */}
 
-      <div style={{width: "100px", height: "100px", backgroundColor: "red"}}>
+      {/* <div style={{width: "100px", height: "100px", backgroundColor: "red"}}>
         shahbaz
-      </div>
+      </div> */}
+      <input type="text" name='email' value={form.email} onChange={handelChange} />
+      <input type="text" name='phone' value={form.phone} onChange={handelChange} />
 
 
 
